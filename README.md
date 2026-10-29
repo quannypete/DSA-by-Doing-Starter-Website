@@ -1,19 +1,41 @@
-# DSA by Doing — Stage 1: Java from Scratch
+# DSA by Doing — Stage 1
 
-Static GitHub Pages website with **42 distinct beginner lessons across 10 modules**. Each lesson includes an explanation, Java code example, knowledge-check question, writing prompt, hint, and completion tracking. Progress and notes are saved in the browser.
+A beginner-first Java learning website, built with **HTML + CSS + modular JavaScript**. No bundler or framework required. Inspired by the separation of pages, scripts and lesson data in Android by Doing.
 
-## Limitations
+## What works
+- 42 navigable Stage 1 lessons in 10 modules
+- Individual lesson explanations, analogies, runnable Java examples, predicted output, multiple-choice checks, hints, practice and independent prompts
+- Array indexing visualizer
+- Progress and practice notes saved with localStorage
+- Dashboard with module progress and JSON export
+- Responsive pages; works on GitHub Pages
 
-This is a **content-complete first pass**, not a full interactive coding platform. It does not execute Java, automatically grade code, enforce mastery, or sync progress between devices. The multiple-choice checks are basic recall questions; the final assessment prompts are not automatically evaluated. Lessons should be expanded with richer visuals, exercises, feedback, and testing before claiming interview readiness.
+## Important limitations
+- **No Java compiler:** output is a precomputed worked example, not the result of running arbitrary Java code. Students must use a Java IDE or a trusted Java runner to verify edits.
+- Coding exercises are **self-assessed**, not automatically graded. Quiz answers are automatically checked.
+- Content is a substantive first-pass curriculum, not a fully authored textbook. Many lessons share the same instructional structure; deepen explanations and add exercises as you test with beginners.
+- Stage 2–6 cards are placeholders, not released courses.
 
-## Preview locally
+## Run locally
+ES modules require HTTP rather than `file://`. From the repository root run:
 
-From this folder run `python3 -m http.server 8000`, then visit http://localhost:8000. Opening `index.html` as `file://` may prevent loading lessons.json.
+```bash
+python3 -m http.server 8000
+```
 
-## Deploy to GitHub Pages
+Visit http://localhost:8000. For GitHub Pages, push files to the repository root and enable Pages from `main` `/ (root)`. Relative links support project sites.
 
-Copy all four files (`index.html`, `styles.css`, `script.js`, `lessons.json`) to the repository root. Commit and push to `main`, then select Settings → Pages → Deploy from a branch → main / (root).
+## Deploy to existing repository
+Unzip and copy the **contents** of this folder into your local `dsa-by-doing` Git repository. Remove the old root-level `script.js`, `styles.css` and `lessons.json` after verifying the new pages. Then:
 
-## Future weekly releases
+```bash
+git add -A
+git commit -m "feat: rebuild stage 1 as modular Java learning site"
+git push origin main
+```
 
-Stage 2: problem-solving foundations; Stage 3: core data structures; Stage 4: algorithm patterns; Stage 5: interview problem solving; Stage 6: mock interviews and readiness. Make meaningful, tested improvements weekly.
+## Suggested next increments
+1. Expand each lesson's analogies and add step-through diagrams.
+2. Add Java compiler integration with isolated execution and strict resource limits.
+3. Add automated browser tests and accessibility checks.
+4. Add Stage 2 modules through meaningful weekly releases.
